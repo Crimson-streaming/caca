@@ -14,34 +14,35 @@
             align-items: center;
             margin-top: 50px;
             color: white;
-            padding-bottom: 50px; /* Ajoute un peu d'espace en bas de la page */
+            padding: 50px; /* Augmente le padding pour agrandir la page */
+            min-height: 100vh; /* Assure que la page prend au moins toute la hauteur de l'écran */
+            box-sizing: border-box; /* Inclut le padding dans les dimensions */
         }
 
         /* Styles pour les images */
         .image-container {
             display: flex;
-            flex-direction: row; /* Alignement en ligne pour les écrans larges */
+            flex-direction: column; /* Aligne en colonne */
             justify-content: center;
             margin-top: 20px;
-            flex-wrap: wrap; /* Permet d'enrouler les éléments sur plusieurs lignes si nécessaire */
             width: 100%; /* Assure que le conteneur occupe toute la largeur */
         }
 
         .image-container div {
-            margin: 15px;
+            margin: 20px 0; /* Espace entre les éléments */
             text-align: center;
         }
 
         .image-container img {
-            width: 100%;
-            max-width: 200px;
+            width: 90%; /* Largeur des images sur mobile */
+            max-width: 250px; /* Limite la largeur maximum des images */
             border: 3px solid white;
             border-radius: 5px;
         }
 
         /* Styles pour le texte sous les images */
         .image-text {
-            margin-top: 15px; /* Espace entre l'image et le texte */
+            margin-top: 10px; /* Espace entre l'image et le texte */
             font-size: 18px;
             color: #FFFFFF; /* Couleur blanche pour le texte */
         }
@@ -97,27 +98,8 @@
         /* Media query pour les petits écrans */
         @media (max-width: 600px) {
             .image-container {
-                flex-direction: column; /* Aligne les images en colonne sur mobile */
+                flex-direction: column; /* Assure que les images sont en colonne sur mobile */
                 align-items: center; /* Centre les images */
-                width: 100%; /* Assure que le conteneur occupe toute la largeur sur mobile */
-            }
-
-            .image-container div {
-                width: 100%; /* Chaque image occupe la largeur complète */
-                max-width: none; /* Pas de largeur maximum pour s'étendre entièrement */
-            }
-
-            .image-container img {
-                width: 90%; /* Ajuste la taille des images sur mobile */
-                max-width: 250px; /* Optionnel : limite la largeur max des images */
-            }
-
-            .image-text {
-                font-size: 16px; /* Réduit légèrement la taille du texte pour les petits écrans */
-            }
-
-            .horizontal-image img {
-                width: 90%;
             }
 
             h1 {
