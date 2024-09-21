@@ -49,7 +49,7 @@
     function search() {
         const query = document.getElementById('searchInput').value.toLowerCase().trim();
         const formattedQuery = query.replace(/\s+/g, '-');
-        const pageUrl = '/contenu/' + formattedQuery + '.html';
+        const pageUrl = 'contenu/' + formattedQuery + '.html';
 
         // Vérifier si la page existe avant de rediriger
         fetch(pageUrl, { method: 'HEAD' })
