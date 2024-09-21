@@ -57,12 +57,12 @@
                 if (response.ok) {
                     window.location.href = pageUrl; // Si la page existe, rediriger
                 } else {
-                    window.location.href = '404.html'; // Sinon, rediriger vers la page d'erreur
+                    window.location.href = 'Acceuil/404.html'; // Sinon, rediriger vers la page d'erreur
                 }
             })
             .catch(error => {
                 console.error('Erreur lors de la vérification de la page :', error);
-                window.location.href = '404.html'; // Rediriger vers l'erreur en cas d'échec
+                window.location.href = 'Acceuil/404.html'; // Rediriger vers l'erreur en cas d'échec
             });
     }
 
