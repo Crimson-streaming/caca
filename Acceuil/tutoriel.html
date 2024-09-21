@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -15,6 +14,7 @@
             align-items: center;
             margin-top: 50px;
             color: white;
+            padding-bottom: 50px; /* Ajoute un peu d'espace en bas de la page */
         }
 
         /* Styles pour les images */
@@ -24,6 +24,7 @@
             justify-content: center;
             margin-top: 20px;
             flex-wrap: wrap; /* Permet d'enrouler les éléments sur plusieurs lignes si nécessaire */
+            width: 100%; /* Assure que le conteneur occupe toute la largeur */
         }
 
         .image-container div {
@@ -98,11 +99,17 @@
             .image-container {
                 flex-direction: column; /* Aligne les images en colonne sur mobile */
                 align-items: center; /* Centre les images */
+                width: 100%; /* Assure que le conteneur occupe toute la largeur sur mobile */
+            }
+
+            .image-container div {
+                width: 100%; /* Chaque image occupe la largeur complète */
+                max-width: none; /* Pas de largeur maximum pour s'étendre entièrement */
             }
 
             .image-container img {
-                width: 80%; /* Ajuste la taille des images sur mobile */
-                max-width: 250px;
+                width: 90%; /* Ajuste la taille des images sur mobile */
+                max-width: 250px; /* Optionnel : limite la largeur max des images */
             }
 
             .image-text {
@@ -122,7 +129,7 @@
 <body>
     <!-- Logo et nom du site en haut à gauche -->
     <div class="header">
-        <a href="/index.html">
+        <a href="../index.html">
             <img src="../img/logo.png" alt="logo du site" />
         </a>
         <a href="../index.html">
