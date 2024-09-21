@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -18,102 +19,77 @@
 
         /* Styles pour les images */
         .image-container {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
+            display: flex; /* Utiliser flex pour aligner les images horizontalement */
+            flex-direction: row; /* Alignement horizontal */
+            justify-content: center; /* Centre les images */
             margin-top: 20px;
-            flex-wrap: wrap;
+            flex-wrap: wrap; /* Permet d'enrouler les éléments sur plusieurs lignes */
         }
 
         .image-container div {
-            margin: 15px;
-            text-align: center;
+            margin: 15px; /* Espace entre les blocs d'images */
+            text-align: center; /* Centre le texte sous chaque image */
         }
 
         .image-container img {
-            width: 100%;
-            max-width: 200px;
-            border: 3px solid white;
-            border-radius: 5px;
+            width: 200px; /* Ajuste la taille de l'image */
+            border: 3px solid white; /* Ajoute un contour blanc autour des images */
+            border-radius: 5px; /* Arrondi des coins du contour */
         }
 
         /* Styles pour le texte sous les images */
         .image-text {
-            margin-top: 15px; /* Augmente l'espace entre l'image et le texte */
-            font-size: 18px; /* Augmente la taille du texte */
-            color: #FFFFFF; /* Couleur blanche pour plus de contraste */
+            margin-top: 10px; /* Espace entre l'image et le texte */
+            font-size: 16px;
+            color: #CCCCCC; /* Couleur grise */
         }
 
         /* Styles pour le header */
         .header {
             display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            margin-bottom: 20px;
+            align-items: center; /* Aligne verticalement le logo et le texte */
+            justify-content: flex-start; /* Aligne à gauche */
+            margin-bottom: 20px; /* Espace en dessous du header */
         }
 
         .header a {
-            text-decoration: none;
-            color: white;
+            text-decoration: none; /* Supprime le soulignement sur le lien */
+            color: white; /* Couleur du texte */
         }
 
         .header img {
-            width: 80px;
+            width: 80px; /* Ajuste la taille du logo */
             margin-right: 10px;
         }
 
         .header span {
-            font-size: 24px;
+            font-size: 24px; /* Ajuste la taille du texte du nom du site */
             font-weight: 600;
         }
 
         /* Styles pour le titre */
         h1 {
-            margin-top: 20px;
-            font-size: 32px;
+            margin-top: 20px; /* Espace entre le header et le titre */
+            font-size: 32px; /* Ajuste la taille du titre pour l'alignement */
         }
 
         /* Styles pour l'image horizontale */
         .horizontal-image {
-            margin: 30px 0;
-            text-align: center;
+            margin: 30px 0; /* Espace au-dessus et en dessous de l'image */
+            text-align: center; /* Centre l'image */
         }
 
         .horizontal-image img {
-            width: 70%;
-            max-width: 400px;
-            border: 3px solid white;
-            border-radius: 5px;
+            width: 70%; /* Agrandit légèrement l'image horizontale */
+            max-width: 400px; /* Limite la largeur maximum de l'image */
+            border: 3px solid white; /* Ajoute un contour blanc */
+            border-radius: 5px; /* Arrondi des coins du contour */
         }
 
         .horizontal-image p {
-            margin-top: 10px;
+            margin-top: 10px; /* Espace entre l'image et le texte */
             font-size: 18px;
-            color: #FFFFFF;
-        }
-
-        /* Media query pour les petits écrans */
-        @media (max-width: 600px) {
-            .image-container {
-                flex-direction: column;
-            }
-
-            .image-container img {
-                width: 80%;
-                max-width: 250px; /* Augmente légèrement la taille des images sur mobile */
-            }
-
-            .image-text {
-                font-size: 16px; /* Réduit légèrement la taille du texte sur mobile pour qu'il soit proportionnel */
-            }
-
-            .horizontal-image img {
-                width: 90%;
-            }
-
-            h1 {
-                font-size: 28px; /* Réduit la taille du titre pour les petits écrans */
-            }
+            color: #CCCCCC; /* Couleur grise pour le texte */
         }
     </style>
 </head>
@@ -133,26 +109,26 @@
 
         <!-- Image horizontale centrée avec texte en dessous -->
         <div class="horizontal-image">
-            <img src="../img/mega-app.jpeg" alt="Image Horizontale">
+            <img src="/img/mega-app.jpeg" alt="Image Horizontale">
             <p>Télécharger l'application Mega</p>
         </div>
         
         <!-- Conteneur pour les images -->
         <div class="image-container">
             <div>
-                <img src="../img/recherche.jpeg" alt="Image 1">
+                <img src="/img/recherche.jpeg" alt="Image 1">
                 <p class="image-text">Rechercher votre film, <br>série et anime préféré</p>
             </div>
             <div>
-                <img src="../img/regarder.jpeg" alt="Image 2">
+                <img src="/img/regarder.jpeg" alt="Image 2">
                 <p class="image-text">Cliquez sur le bouton <br>"Regarder"</p>
             </div>
             <div>
-                <img src="../img/importer.jpeg" alt="Image 3">
+                <img src="/img/importer.jpeg" alt="Image 3">
                 <p class="image-text">Appuyez sur le bouton <br>"Importer" en bas à gauche</p>
             </div>
             <div>
-                <img src="../img/ajouter.jpeg" alt="Image 4">
+                <img src="/img/ajouter.jpeg" alt="Image 4">
                 <p class="image-text">Appuyez en bas à droite <br>sur "Ajouter aux disques nuagiques"</p>
             </div>
         </div>
