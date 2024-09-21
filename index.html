@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crimson Streaming - Recherche</title>
+    
+    <!-- Lien vers Google Fonts pour "Poppins" -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Acceuil/a-styles.css"> <!-- Lien vers le fichier CSS -->
+</head>
+<body>
+    <!-- Logo et nom du site en haut à gauche -->
+    <div class="header">
+        <a href="index.html">
+            <img src="/img/logo.png" alt="logo du site" />
+        </a>
+        <a href="index.html">
+            <span>Crimson</span>
+        </a>
+    </div>
+
+    <!-- Conteneur principal de la barre de recherche -->
+    <div class="search-container">
+        <h1>Trouvez votre films, séries et animes préféré</h1>
+        <p>Explorez notre catalogue riche en films, séries et animes. Séparez chaque mot par un tiret. Par exemple : One-Piece.</p>
+        
+        <!-- Barre de recherche esthétique -->
+        <div class="search-box">
+            <input type="text" placeholder="Rechercher un titre..." id="searchInput" autocomplete="off">
+            <button onclick="search()">Rechercher</button>
+        </div>
+        
+        <!-- Petits détails décoratifs -->
+        <div class="details">
+            <span>Films 🎥</span>
+            <span>Séries 📺</span>
+            <span>Animes 🍿</span>
+        </div>
+
+        <!-- Bouton Tutoriel -->
+        <button class="tutorial-button" onclick="window.location.href='Acceuil/tutoriel.html'">Tutoriel</button>
+    </div>
+
+    <!-- Script pour gérer la recherche avec gestion de l'erreur 404 -->
+    <script>
+    // Fonction de recherche
+    function search() {
+        const query = document.getElementById('searchInput').value.toLowerCase().trim();
+        const formattedQuery = query.replace(/\s+/g, '-');
+        const pageUrl = '/contenu/' + formattedQuery + '.html';
+
+        // Vérifier si la page existe avant de rediriger
+        fetch(pageUrl, { method: 'HEAD' })
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = pageUrl; // Si la page existe, rediriger
+                } else {
+                    window.location.href = '404.html'; // Sinon, rediriger vers la page d'erreur
+                }
+            })
+            .catch(error => {
+                console.error('Erreur lors de la vérification de la page :', error);
+                window.location.href = '404.html'; // Rediriger vers l'erreur en cas d'échec
+            });
+    }
+
+    // Détecter la touche "Entrée" pour lancer la recherche
+    document.getElementById('searchInput').addEventListener('keypress', function (event) {
+        if (event.key === 'Enter') {
+            search();
+        }
+    });
+    </script>
+</body>
+</html>

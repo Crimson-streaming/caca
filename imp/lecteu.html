@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking Bad - Episode 1</title>
+    
+    <!-- Lien vers la police Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            background-color: #0E0E0E; 
+            font-family: 'Poppins', sans-serif; 
+            color: white; 
+            overflow: hidden; /* Désactiver le défilement */
+        }
+        .header { 
+            display: flex; 
+            justify-content: flex-start; 
+            align-items: center; 
+            padding: 20px; 
+        }
+        .header a { 
+            display: flex; 
+            align-items: center; 
+            text-decoration: none; /* Supprime le soulignement par défaut du lien */
+        }
+        .header img { 
+            height: 70px; 
+            margin-right: 15px; 
+        } /* Agrandir le logo */
+        .header span { 
+            font-size: 2rem; 
+            font-weight: 600; 
+            color: #fff; 
+        }
+        .container { 
+            max-width: 900px; 
+            margin: 10px auto; /* Remonter la boîte */
+            padding: 20px; 
+            background-color: #222; 
+            border-radius: 15px; 
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); 
+        }
+        h1 { 
+            font-size: 2.5rem; 
+            color: #fff; 
+            text-align: center; 
+            font-weight: 600; 
+        }
+        h1 span { 
+            color: #007bff; 
+        }
+        .selectors { 
+            display: flex; 
+            justify-content: center; 
+            gap: 20px; 
+            margin: 20px 0; 
+        }
+        select { 
+            width: 100%; 
+            max-width: 200px; 
+            padding: 10px; 
+            border: none; 
+            border-radius: 5px; 
+            background-color: #333; 
+            color: white; 
+            font-size: 1.2rem; 
+        }
+        .episode-image { 
+            text-align: center; 
+            margin: 20px 0; 
+        }
+        .episode-image iframe { 
+            width: 100%; 
+            border-radius: 10px; 
+        }
+    </style>
+    <script>
+        // Désactive le clic droit pour empêcher l'enregistrement et le déplacement des images
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        }, false);
+    </script>
+</head>
+<body>
+
+    <!-- Header avec le logo et le nom du site à gauche -->
+    <div class="header">
+        <a href="../acceuil/accueil.html"> <!-- Lien vers la page d'accueil -->
+            <img src="/img/logo.png" alt="logo du site" />
+            <span>Crimson</span>
+        </a>
+    </div>
+
+    <div class="container">
+        <h1>Breaking Bad <span>Saison 1</span></h1>
+
+        <div class="selectors">
+            <!-- Sélecteur de saison -->
+            <select id="season">
+                <option value="1" selected>Saison 1</option>
+                <option value="2">Saison 2</option>
+                <option value="3">Saison 3</option>
+                <option value="4">Saison 4</option>
+                <option value="5">Saison 5</option>
+            </select>
+
+            <!-- Sélecteur d'épisode -->
+            <select id="episode">
+                <option value="1" selected>Épisode  1</option>
+                <option value="2">Épisode  2</option>
+                <option value="3">Épisode  3</option>
+                <option value="4">Épisode  4</option>
+                <option value="5">Épisode  5</option>
+                <option value="6">Épisode  6</option>
+                <option value="7">Épisode  7</option>
+            </select>
+        </div>
+
+        <div class="episode-image">
+            <!-- Vidéo YouTube pour Breaking Bad -->
+            <iframe width="640" height="360" src="https://uqload.ws/embed-dnjmgqo90nsr.html" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+</body>
+</html>
