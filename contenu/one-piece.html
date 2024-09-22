@@ -4,8 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>One Piece VF</title>
+    
+    <!-- Lien vers Google Fonts pour "Poppins" -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="../Acceuil/a-styles.css">
+    <link rel="stylesheet" href="../Acceuil/a-styles.css"> <!-- Lien vers le fichier CSS -->
+    
+    <!-- Définit l'affichage en plein écran pour iPhone -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
+    <!-- Masque la barre d'état (optionnel) -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Titre de votre application sur l'écran d'accueil -->
+    <meta name="apple-mobile-web-app-title" content="Crimson Streaming">
+
+    <!-- Icônes de l'application sur l'écran d'accueil pour différentes tailles d'appareils -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/logo.png">
+    <link rel="apple-touch-icon" href="../img/logo.png">
+
+    <!-- Déclaration du fichier manifest.json pour la PWA -->
+    <link rel="manifest" href="/manifest.json">
+    
     <style>
         /* Styles pour le conteneur principal */
         .content-container {
@@ -71,10 +90,10 @@
 <body>
     <!-- Logo et nom du site en haut à gauche -->
     <div class="header">
-        <a href="index.html">
+        <a href="../index.html">
             <img src="../img/logo.png" alt="logo du site" />
         </a>
-        <a href="index.html">
+        <a href="../index.html">
             <span>Crimson</span>
         </a>
     </div>
@@ -88,3 +107,4 @@
     </div>
 </body>
 </html>
+
