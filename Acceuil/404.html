@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page non trouvée</title>
     <link rel="stylesheet" href="a-styles.css">
+    
+    <!-- Définit l'affichage en plein écran pour iPhone -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
+    <!-- Masque la barre d'état (optionnel) -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Titre de votre application sur l'écran d'accueil -->
+    <meta name="apple-mobile-web-app-title" content="Crimson Streaming">
+
+    <!-- Icônes de l'application sur l'écran d'accueil pour différentes tailles d'appareils -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/logo.png">
+    <link rel="apple-touch-icon" href="../img/logo.png">
+
+    <!-- Déclaration du fichier manifest.json pour la PWA -->
+    <link rel="manifest" href="../manifest.json">
 </head>
 <body>
     <!-- Ajout du logo et du nom du site en haut à gauche -->
@@ -23,7 +39,7 @@
 
     <script>
     function goHome() {
-          window.location.href = '../index.html'; // Redirection vers la page d'accueil //
+          window.location.href = '../index.html'; // Redirection vers la page d'accueil
     }
     </script>
 </body>
