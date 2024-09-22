@@ -96,7 +96,7 @@ body {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
-    margin-left: -150px; /* Ajuster pour rapprocher le bouton de l'input */
+    margin-left: -200px; /* Ajuster pour rapprocher le bouton de l'input */
 }
 
 /* Effet au survol du bouton */
