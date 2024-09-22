@@ -69,7 +69,7 @@ body {
     max-width: 400px; /* Limite à une largeur maximale */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     margin: 0 auto; /* Centre la barre de recherche */
-    justify-content: space-between; /* Espace uniforme entre l'input et le bouton */
+    flex-wrap: wrap; /* Permet aux éléments de s'ajuster */
 }
 
 .search-box input {
@@ -79,7 +79,7 @@ body {
     color: white;
     font-size: 16px;
     padding: 10px;
-    flex-grow: 1; /* S'adapte à l'espace disponible */
+    flex-grow: 1;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -92,12 +92,11 @@ body {
     color: white;
     border: none;
     border-radius: 50px;
-    padding: 10px 20px;
+    padding: 10px 20px; /* Ajuster pour le rendre plus compact */
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
-    flex-shrink: 0; /* Empêche le bouton de rétrécir */
-    margin-left: -100px; /* Petit espace entre l'input et le bouton */
+    margin-left: -100px; /* Ajuster pour rapprocher le bouton de l'input */
 }
 
 /* Effet au survol du bouton */
@@ -106,20 +105,20 @@ body {
     transform: scale(1.05);
 }
 
-/* Détails sous la barre de recherche */
 .details {
     margin-top: 30px;
     font-size: 16px;
     color: #CCCCCC;
-    position: relative;
-    z-index: 1;
+    position: relative; /* Assure que le positionnement soit correct */
+    z-index: 1; /* Assure que l'élément soit au-dessus des autres éléments */
 }
 
 .details span {
     margin: 0 10px;
     animation: pulse 5s infinite alternate;
-    display: inline-block;
+    display: inline-block; /* S'assurer qu'il est affiché en bloc pour éviter les problèmes d'alignement */
 }
+
 
 /* Animation pour les petits détails */
 @keyframes pulse {
@@ -184,8 +183,6 @@ body {
 .error-container button:hover {
     background-color: #e04343;
 }
-
-/* Header pour d'autres pages */
 .header {
     display: flex;
     align-items: center;
