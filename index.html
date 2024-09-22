@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,25 +9,6 @@
     <!-- Lien vers Google Fonts pour "Poppins" -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Acceuil/a-styles.css"> <!-- Lien vers le fichier CSS -->
-    
-    <!-- Définit l'affichage en plein écran pour iPhone -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    
-    <!-- Masque la barre d'état (optionnel) -->
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-    <!-- Titre de votre application sur l'écran d'accueil -->
-    <meta name="apple-mobile-web-app-title" content="Crimson Streaming">
-
-    <!-- Icônes de l'application sur l'écran d'accueil pour différentes tailles d'appareils -->
-    <link rel="apple-touch-icon" sizes="180x180" href="img/logo.png">
-
-    <link rel="apple-touch-icon" href="img/logo.png">
-
-   
-
-    <!-- Déclaration du fichier manifest.json pour la PWA -->
-    <link rel="manifest" href="manifest.json">
 </head>
 <body>
     <!-- Logo et nom du site en haut à gauche -->
@@ -41,8 +23,8 @@
 
     <!-- Conteneur principal de la barre de recherche -->
     <div class="search-container">
-        <h1>Trouvez votre film, série et anime préféré</h1>
-        <p>Explorez notre catalogue riche en films, séries et animes.</p>
+        <h1>Trouvez votre films, séries et animes préféré</h1>
+        <p>Explorez notre catalogue riche en films, séries et animes. Séparez chaque mot par un tiret. Par exemple : One-Piece.</p>
         
         <!-- Barre de recherche esthétique -->
         <div class="search-box">
@@ -75,12 +57,12 @@
                 if (response.ok) {
                     window.location.href = pageUrl; // Si la page existe, rediriger
                 } else {
-                    window.location.href = 'Acceuil/404.html'; // Sinon, rediriger vers la page d'erreur
+                    window.location.href = '404.html'; // Sinon, rediriger vers la page d'erreur
                 }
             })
             .catch(error => {
                 console.error('Erreur lors de la vérification de la page :', error);
-                window.location.href = 'Acceuil/404.html'; // Rediriger vers l'erreur en cas d'échec
+                window.location.href = '404.html'; // Rediriger vers l'erreur en cas d'échec
             });
     }
 
