@@ -97,7 +97,7 @@ body {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
     flex-shrink: 0; /* Empêche le bouton de rétrécir */
-    margin-left: 200px; /* Petit espace entre l'input et le bouton */
+    margin-left: 150px; /* Petit espace entre l'input et le bouton */
 }
 
 /* Effet au survol du bouton */
