@@ -5,70 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crimson Streaming - Recherche</title>
     
-    <!-- Lien vers Google Fonts pour "Poppins" -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Acceuil/a-styles.css"> <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" href="/caca/Acceuil/a-styles.css"> <!-- Lien vers le fichier CSS -->
     
-    <!-- Définit l'affichage en plein écran pour iPhone -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Crimson">
-    <link rel="apple-touch-icon" sizes="192x192" href="img/logo-iphone.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="shortcut icon" href="/favicon/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="192x192" href="/caca/img/logo-iphone.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/caca/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/caca/favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="/caca/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/caca/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/caca/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/caca/favicon/android-chrome-512x512.png">
+    <link rel="manifest" href="/caca/favicon/site.webmanifest">
 
-    <!-- Lien vers Fuse.js -->
     <script src="https://cdn.jsdelivr.net/npm/fuse.js"></script>
 </head>
 <body>
-    <!-- Logo et nom du site en haut à gauche -->
     <div class="header">
-        <a href="accueil.html">
-            <img src="img/logo.png" alt="logo du site" class="logo"/>
+        <a href="/caca/">
+            <img src="/caca/img/logo.png" alt="logo du site" class="logo"/>
         </a>
-        <a href="accueil.html" class="site-name">
+        <a class="site-name">
             <span>Crimson</span>
         </a>
     </div>
 
-    <!-- Conteneur principal de la barre de recherche -->
     <div class="search-container">
         <h1>Trouvez votre film, série et anime préféré</h1>
         <p>Explorez notre catalogue riche en films, séries et animes.</p>
         
-        <!-- Barre de recherche esthétique -->
         <div class="search-box">
             <input type="text" placeholder="Rechercher un titre..." id="searchBar" autocomplete="off">
             <button id="searchButton">Rechercher</button>
         </div>
         
-        <!-- Résultats de la recherche -->
         <div id="searchResults"></div>
 
-        <!-- Petits détails décoratifs -->
         <div class="details">
             <span>Films 🎥</span>
             <span>Séries 📺</span>
             <span>Animes 🍿</span>
         </div>
 
-        <!-- Conteneur pour les boutons Tutoriel et Application -->
         <div class="button-container">
-            <button class="tutorial-button" onclick="window.location.href='Acceuil/tutoriel.html'">Tutoriel</button>
-            <button class="application-button" onclick="window.location.href='Acceuil/application.html'">Application</button>
+            <button class="tutorial-button" onclick="window.location.href='/caca/Acceuil/tutoriel.html'">Tutoriel</button>
+            <button class="application-button" onclick="window.location.href='/caca/Acceuil/application.html'">Application</button>
         </div>
     </div>
 
     <script>
-        let videos = []; // Tableau pour stocker les vidéos
+        let videos = [];
 
         // Charger les données de vidéos depuis le fichier JSON
-        fetch('videos.json') // Assurez-vous que ce chemin est correct
+        fetch('/caca/videos.json') // Assurez-vous que ce chemin est correct
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Erreur lors du chargement de videos.json');
@@ -76,38 +67,32 @@
                 return response.json();
             })
             .then(data => {
-                videos = data; // Stocke les vidéos dans le tableau
+                videos = data;
 
-                // Options pour Fuse.js
                 const options = {
-                    keys: ['title'], // Rechercher uniquement dans les titres
-                    threshold: 0.3,  // Ajustez le seuil pour des résultats plus stricts
+                    keys: ['title'],
+                    threshold: 0.3,
                 };
 
-                // Initialiser Fuse.js avec les données
                 const fuse = new Fuse(videos, options);
 
-                // Fonction pour afficher les résultats
                 function displayResults(results) {
                     const resultsDiv = document.getElementById('searchResults');
-                    resultsDiv.innerHTML = ''; // Vider les résultats
+                    resultsDiv.innerHTML = '';
 
-                    const maxResults = 3; // Limite à 3 résultats
-                    const limitedResults = results.slice(0, maxResults); // Limiter à 3 résultats
+                    const maxResults = 3;
+                    const limitedResults = results.slice(0, maxResults);
 
                     if (limitedResults.length > 0) {
                         limitedResults.forEach(result => {
                             const video = result.item;
                             resultsDiv.innerHTML += `<a href="${video.url}" class="result-link">${video.title}</a><br>`;
                         });
-                        resultsDiv.style.display = 'block'; // Afficher les résultats
                     } else {
-                        resultsDiv.innerHTML = '<p>Aucun résultat trouvé.</p>'; // Message si aucun résultat
-                        resultsDiv.style.display = 'block'; // Afficher même s'il n'y a pas de résultats
+                        resultsDiv.innerHTML = '<p>Aucun résultat trouvé.</p>';
                     }
                 }
 
-                // Écouter l'événement d'entrée sur la barre de recherche
                 document.getElementById('searchBar').addEventListener('input', (e) => {
                     const searchTerm = e.target.value.trim();
 
@@ -115,11 +100,10 @@
                         const results = fuse.search(searchTerm);
                         displayResults(results);
                     } else {
-                        displayResults([]); // Si vide, ne rien afficher
+                        displayResults([]);
                     }
                 });
 
-                // Écouter l'événement de clic sur le bouton de recherche
                 document.getElementById('searchButton').addEventListener('click', () => {
                     const searchTerm = document.getElementById('searchBar').value.trim();
 
@@ -127,7 +111,7 @@
                         const results = fuse.search(searchTerm);
                         displayResults(results);
                     } else {
-                        displayResults([]); // Si vide, ne rien afficher
+                        displayResults([]);
                     }
                 });
             })
