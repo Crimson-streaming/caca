@@ -28,10 +28,10 @@
 <body>
     <!-- Logo et nom du site en haut à gauche -->
     <div class="header">
-        <a href="/">
+        <a href="accueil.html">
             <img src="img/logo.png" alt="logo du site" class="logo"/>
         </a>
-        <a class="site-name">
+        <a href="accueil.html" class="site-name">
             <span>Crimson</span>
         </a>
     </div>
@@ -65,7 +65,7 @@
     </div>
 
     <script>
-        let videos = [];
+        let videos = []; // Tableau pour stocker les vidéos
 
         // Charger les données de vidéos depuis le fichier JSON
         fetch('videos.json') // Assurez-vous que ce chemin est correct
@@ -76,7 +76,7 @@
                 return response.json();
             })
             .then(data => {
-                videos = data;
+                videos = data; // Stocke les vidéos dans le tableau
 
                 // Options pour Fuse.js
                 const options = {
@@ -100,8 +100,10 @@
                             const video = result.item;
                             resultsDiv.innerHTML += `<a href="${video.url}" class="result-link">${video.title}</a><br>`;
                         });
+                        resultsDiv.style.display = 'block'; // Afficher les résultats
                     } else {
                         resultsDiv.innerHTML = '<p>Aucun résultat trouvé.</p>'; // Message si aucun résultat
+                        resultsDiv.style.display = 'block'; // Afficher même s'il n'y a pas de résultats
                     }
                 }
 
