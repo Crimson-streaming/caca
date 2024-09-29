@@ -137,26 +137,9 @@ body {
 
 /* Styles pour les résultats de recherche */
 #searchResults {
-    margin-top: 20px;
-}
-
-.result-link {
-    color: #E50914;
-    text-decoration: none;
-    font-size: 18px;
-    margin: 5px 0;
-    display: block; /* Chaque lien prend toute la largeur */
-}
-
-.result-link:hover {
-    text-decoration: underline;
-}
-/* Styles pour les résultats de recherche */
-#searchResults {
     margin-top: 10px; /* Espacement au-dessus des résultats */
     border: 1px solid #E50914; /* Bordure rouge autour des résultats */
     border-radius: 15px; /* Coins plus arrondis */
-    max-height: none; /* Supprime la hauteur maximale pour s'adapter au contenu */
     background-color: #1C1C1C; /* Fond sombre pour correspondre au design général */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Ombre plus prononcée pour le contraste */
     width: 80%; /* Largeur à 80% */
@@ -173,7 +156,6 @@ body {
     color: #E50914; /* Couleur du texte changée à rouge pour plus de visibilité */
     transition: background-color 0.3s; /* Effet de transition pour le survol */
     border-radius: 10px; /* Arrondir les coins des liens */
-    font-family: 'Poppins', sans-serif; /* Utilisation de la police Poppins pour les liens */
 }
 
 /* Couleur de fond au survol */
