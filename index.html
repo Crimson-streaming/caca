@@ -6,20 +6,8 @@
     <title>Crimson Streaming - Recherche</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/caca/Acceuil/a-styles.css"> <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" href="/caca/a-styles.css"> <!-- Lien vers le fichier CSS -->
     
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Crimson">
-    <link rel="apple-touch-icon" sizes="192x192" href="/caca/img/logo-iphone.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/caca/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/caca/favicon/favicon-16x16.png">
-    <link rel="shortcut icon" href="/caca/favicon/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/caca/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/caca/favicon/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/caca/favicon/android-chrome-512x512.png">
-    <link rel="manifest" href="/caca/favicon/site.webmanifest">
-
     <script src="https://cdn.jsdelivr.net/npm/fuse.js"></script>
 </head>
 <body>
@@ -59,7 +47,7 @@
         let videos = [];
 
         // Charger les données de vidéos depuis le fichier JSON
-        fetch('/caca/videos.json') // Assurez-vous que ce chemin est correct
+        fetch('/caca/contenu/videos.json') // Assurez-vous que ce chemin est correct
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Erreur lors du chargement de videos.json');
