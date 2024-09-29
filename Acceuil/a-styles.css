@@ -19,7 +19,7 @@ body {
 }
 
 /* Logo et nom centrés pour les autres pages */
-.logo-container {
+.header {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,7 +69,6 @@ body {
     max-width: 400px; /* Limite à une largeur maximale */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     margin: 0 auto; /* Centre la barre de recherche */
-    flex-wrap: wrap; /* Permet aux éléments de s'ajuster */
 }
 
 .search-box input {
@@ -96,7 +95,6 @@ body {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
-    margin-left: -150px; /* Ajuster pour rapprocher le bouton de l'input */
 }
 
 /* Effet au survol du bouton */
@@ -109,104 +107,76 @@ body {
     margin-top: 30px;
     font-size: 16px;
     color: #CCCCCC;
-    position: relative; /* Assure que le positionnement soit correct */
-    z-index: 1; /* Assure que l'élément soit au-dessus des autres éléments */
 }
 
-.details span {
-    margin: 0 10px;
-    animation: pulse 5s infinite alternate;
-    display: inline-block; /* S'assurer qu'il est affiché en bloc pour éviter les problèmes d'alignement */
-}
-
-
-/* Animation pour les petits détails */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 0.8;
-    }
-    100% {
-        transform: scale(1.2);
-        opacity: 1;
-    }
-}
-
-/* Styles pour le bouton Tutoriel */
-.tutorial-button {
+/* Styles pour le bouton Tutoriel et Application */
+.tutorial-button, .application-button {
     background-color: #E50914;
     color: white;
-    padding: 10px 30px; /* Ajuster le padding pour le rendre plus mince */
+    padding: 10px; /* Ajuste le padding pour un aspect plus compact */
     border: none;
     border-radius: 25px; /* Arrondir le bouton */
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 20px; /* Espace au-dessus du bouton */
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 10px; /* Espace autour des boutons */
+    width: 150px; /* Largeur fixe pour les deux boutons */
 }
 
-.tutorial-button:hover {
+.tutorial-button:hover, .application-button:hover {
     background-color: #b81b0e; /* Couleur au survol */
+    transform: scale(1.05); /* Légère augmentation de taille au survol */
 }
 
-/* Styles pour la page d'erreur */
-.error-container {
-    text-align: center;
-    margin-top: 20px; /* Réduit l'espace en haut */
-    font-family: 'Poppins', sans-serif;
-    padding: 20px; /* Ajoute un peu d'espace autour du contenu */
+/* Styles pour le conteneur des boutons */
+.button-container {
+    display: flex; /* Utiliser Flexbox pour aligner les boutons */
+    justify-content: center; /* Centrer les boutons horizontalement */
+    margin-top: 20px; /* Espace au-dessus des boutons */
 }
 
-.error-container h1 {
-    font-size: 2.5rem; /* Taille du texte */
-    color: #ff4c4c;
-    margin-bottom: 15px; /* Espace entre le titre et le texte */
+/* Styles pour les résultats de recherche */
+#searchResults {
+    margin-top: 20px;
 }
 
-.error-container p {
-    font-size: 1.1rem; /* Taille du texte */
-    color: #ffffff; /* Couleur blanche pour le contraste */
-    margin-bottom: 20px; /* Espace avant le bouton */
+.result-link {
+    color: #E50914;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 5px 0;
+    display: block; /* Chaque lien prend toute la largeur */
 }
 
-.error-container button {
-    background-color: #ff4c4c;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.result-link:hover {
+    text-decoration: underline;
+}
+/* Styles pour les résultats de recherche */
+#searchResults {
+    margin-top: 10px; /* Espacement au-dessus des résultats */
+    border: 1px solid #E50914; /* Bordure rouge autour des résultats */
+    border-radius: 15px; /* Coins plus arrondis */
+    max-height: none; /* Supprime la hauteur maximale pour s'adapter au contenu */
+    background-color: #1C1C1C; /* Fond sombre pour correspondre au design général */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Ombre plus prononcée pour le contraste */
+    width: 80%; /* Largeur à 80% */
+    max-width: 300px; /* Limite à une largeur maximale de 300px */
+    padding: 10px; /* Ajoute un espacement intérieur */
+    font-family: 'Poppins', sans-serif; /* Utilisation de la police Poppins */
 }
 
-.error-container button:hover {
-    background-color: #e04343;
-}
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Aligne à gauche */
-    margin-bottom: 20px; /* Espace en dessous du header */
-}
-
-.header a {
-    text-decoration: none; /* Supprime le soulignement sur le lien */
-    color: white; /* Couleur du texte */
+/* Styles pour chaque résultat */
+#searchResults a {
+    display: block; /* Chaque lien s'affiche sur une nouvelle ligne */
+    padding: 10px; /* Espacement intérieur des liens */
+    text-decoration: none; /* Supprimer le soulignement par défaut */
+    color: #E50914; /* Couleur du texte changée à rouge pour plus de visibilité */
+    transition: background-color 0.3s; /* Effet de transition pour le survol */
+    border-radius: 10px; /* Arrondir les coins des liens */
+    font-family: 'Poppins', sans-serif; /* Utilisation de la police Poppins pour les liens */
 }
 
-.header img {
-    width: 100px; /* Taille du logo */
-    margin-right: 10px;
-}
-
-.header span {
-    font-size: 32px;
-    font-weight: 600;
-    margin-right: 20px; /* Espacement entre le texte et le titre */
-}
-
-/* Ajustement pour aligner le header avec le contenu principal */
-.content-container {
-    margin-top: 20px; /* Ajuste l'espacement entre le header et le contenu */
+/* Couleur de fond au survol */
+#searchResults a:hover {
+    background-color: #f0f0f0; /* Couleur de fond au survol */
 }
