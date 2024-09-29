@@ -12,8 +12,8 @@
 </head>
 <body>
     <div class="header">
-        <a href="/caca/">
-            <img src="/img/logo.png" alt="logo du site" class="logo"/>
+        <a>
+            <img src="img/logo.png" alt="logo du site" class="logo"/>
         </a>
         <a class="site-name">
             <span>Crimson</span>
@@ -47,7 +47,7 @@
         let videos = [];
 
         // Charger les données de vidéos depuis le fichier JSON
-        fetch('/caca/videos.json') // Ajoutez /caca/ ici
+        fetch('videos.json') // Assurez-vous que ce chemin est correct
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Erreur lors du chargement de videos.json');
@@ -71,11 +71,18 @@
                     const maxResults = 3;
                     const limitedResults = results.slice(0, maxResults);
 
+                    // Utiliser un Set pour éviter les doublons
+                    const displayedTitles = new Set();
+
                     if (limitedResults.length > 0) {
                         limitedResults.forEach(result => {
                             const video = result.item;
-                            // Ajoutez /caca/ avant l'URL ici
-                            resultsDiv.innerHTML += `<a href="/caca${video.url}" class="result-link">${video.title}</a><br>`;
+
+                            // Vérifier si le titre n'a pas déjà été ajouté
+                            if (!displayedTitles.has(video.title)) {
+                                resultsDiv.innerHTML += `<a href="/caca${video.url}" class="result-link">${video.title}</a><br>`;
+                                displayedTitles.add(video.title); // Marquer le titre comme affiché
+                            }
                         });
                     } else {
                         resultsDiv.innerHTML = '<p>Aucun résultat trouvé.</p>';
@@ -110,4 +117,3 @@
     </script>
 </body>
 </html>
-
