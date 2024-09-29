@@ -6,7 +6,7 @@
     <title>Crimson Streaming - Recherche</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/a-styles.css"> <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" href="a-styles.css"> <!-- Lien vers le fichier CSS -->
     
     <script src="https://cdn.jsdelivr.net/npm/fuse.js"></script>
 </head>
@@ -47,7 +47,7 @@
         let videos = [];
 
         // Charger les données de vidéos depuis le fichier JSON
-        fetch('/caca/contenu/videos.json') // Assurez-vous que ce chemin est correct
+        fetch('videos.json') // Assurez-vous que ce chemin est correct
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Erreur lors du chargement de videos.json');
