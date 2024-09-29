@@ -162,3 +162,23 @@ body {
 #searchResults a:hover {
     background-color: #f0f0f0; /* Couleur de fond au survol */
 }
+
+/* Media query pour mobile */
+@media (max-width: 600px) {
+    /* Ajuste le conteneur de la barre de recherche pour les petits écrans */
+    .search-box {
+        flex-direction: column; /* Aligne verticalement les éléments à l'intérieur */
+        align-items: center; /* Centre les éléments horizontalement */
+        padding: 15px; /* Ajoute un peu de padding pour que ce soit plus spacieux */
+    }
+
+    .search-box input {
+        width: 100%; /* L'input prend toute la largeur */
+        margin-bottom: 10px; /* Espace entre l'input et le bouton */
+    }
+
+    .search-box button {
+        width: 100%; /* Le bouton prend toute la largeur sous l'input */
+        padding: 12px; /* Légèrement plus grand pour faciliter l'interaction tactile */
+    }
+}
