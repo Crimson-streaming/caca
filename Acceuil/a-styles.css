@@ -14,7 +14,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Hauteur minimale de l'écran, mais permet de dépasser si nécessaire */
     text-align: center;
 }
 
@@ -27,7 +27,7 @@ body {
 }
 
 .logo {
-    width: 100px; /* Taille du logo augmentée */
+    width: 150px; /* Taille du logo agrandie */
     margin-right: 10px;
 }
 
